@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Exercicio1.ConsoleApp
 {
@@ -7,38 +8,17 @@ namespace Exercicio1.ConsoleApp
         static void Main(string[] args)
         {
 
-            double [] altura = new double[15];
-            double menorAltura = 0 , maiorAltura = 0;
-            int i = 0;
-          
-           
-            Console.WriteLine("insira a altura:");
-            altura [0]= double.Parse(Console.ReadLine());
-         
+            float[] altura = new float[15];
 
-            altura = menorAltura;
-            altura = maiorAltura;
-
-            for (i = 1; i < 15; i++)
+            for (int i = 0; i < altura.Length; i++)
             {
-                Console.WriteLine("digite a altura: ", i + 1);
-                Console.WriteLine("{0}", altura);
-
-                if (altura > maiorAltura)
-                {
-                    maiorAltura = altura;                
-                }
-                else
-                if (altura < menorAltura)
-                {
-                    menorAltura = altura;
-                }
+                Console.Write($"-Digite a altura da {i + 1}ª pessoa: ");
+                altura[i] = float.Parse(Console.ReadLine());
             }
-            Console.WriteLine("maior altura: " + Math.Round(maiorAltura, 2));
-            Console.WriteLine("menor altura: " + Math.Round(menorAltura, 2));
-            
 
-
+            Console.WriteLine($"A menor altura do grupo é: {altura.Min()}m");
+            Console.WriteLine($"A maior altura do grupo é: {altura.Max()}m");
+            Console.ReadLine();
 
         }
     }
